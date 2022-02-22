@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario {
+public class Jogo {
 
     private List<Tarefa> tarefas = new ArrayList<Tarefa>();
 

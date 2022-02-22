@@ -6,28 +6,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JogadorTest {
 
     Jogador jogador;
-    Usuario usuario;
+    Jogo jogo;
 
     @BeforeEach
     void setUp(){
         jogador = new Jogador("Creitin");
-        usuario = new Usuario();
+        jogo = new Jogo();
     }
 
     @Test
     void deveAtacar() {
         Tarefa ataque = new AtaqueJogador(jogador);
-        usuario.executarTarefa(ataque);
+        jogo.executarTarefa(ataque);
 
-        assertEquals("O usuário está Atacando", jogador.getAcao());
+        assertEquals("O jogador está Atacando", jogador.getAcao());
     }
 
     @Test
     void deveDefender() {
         Tarefa defesa = new DefesaJogador(jogador);
-        usuario.executarTarefa(defesa);
+        jogo.executarTarefa(defesa);
 
-        assertEquals("O usuário está Defendendo", jogador.getAcao());
+        assertEquals("O jogador está Defendendo", jogador.getAcao());
     }
 
 
@@ -36,12 +36,12 @@ public class JogadorTest {
         Tarefa defesa = new DefesaJogador(jogador);
         Tarefa ataque = new AtaqueJogador(jogador);
 
-        usuario.executarTarefa(defesa);
-        usuario.executarTarefa(ataque);
+        jogo.executarTarefa(defesa);
+        jogo.executarTarefa(ataque);
 
-        usuario.cancelarUltimaTarefa();
+        jogo.cancelarUltimaTarefa();
 
-        assertEquals("O usuário está Defendendo", jogador.getAcao());
+        assertEquals("O jogador está Defendendo", jogador.getAcao());
     }
 
     @Test
@@ -49,11 +49,11 @@ public class JogadorTest {
         Tarefa defesa = new DefesaJogador(jogador);
         Tarefa ataque = new AtaqueJogador(jogador);
 
-        usuario.executarTarefa(ataque);
-        usuario.executarTarefa(defesa);
+        jogo.executarTarefa(ataque);
+        jogo.executarTarefa(defesa);
 
-        usuario.cancelarUltimaTarefa();
+        jogo.cancelarUltimaTarefa();
 
-        assertEquals("O usuário está Atacando", jogador.getAcao());
+        assertEquals("O jogador está Atacando", jogador.getAcao());
     }
 }

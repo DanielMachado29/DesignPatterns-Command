@@ -12,10 +12,10 @@ public class Jogador {
     }
 
     public void atacar(){
-        this.acao = "O usuário está Atacando";
+        this.acao = "O jogador está Atacando";
     }
 
     public void defender(){
-        this.acao = "O usuário está Defendendo";
+        this.acao = "O jogador está Defendendo";
     }
 }
